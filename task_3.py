@@ -1,0 +1,17 @@
+# TODO написать функцию для получения списка уникальных целых чисел
+from random import randint
+
+
+def get_unique_list_numbers(value) -> list[int]:
+    list_of_numbers = [randint(-10, 10) for _ in range(value + 1)]
+    count = 1
+    while len(list_of_numbers) != len(set(list_of_numbers)):
+        list_of_numbers = [randint(-10, 10) for _ in range(value + 1)]
+        count += 1
+    print(count)
+    return list_of_numbers
+
+
+list_unique_numbers = get_unique_list_numbers(14)
+print(list_unique_numbers)
+print(len(list_unique_numbers) == len(set(list_unique_numbers)))
